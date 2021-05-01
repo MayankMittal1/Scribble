@@ -189,10 +189,10 @@
     
 <div class="markers" style="display: none; margin: 20px;">
     <div class="markers-inner ">
-        <button class="marker-size"><div style="height: 3px; width: 3px; border-radius: 50%; background-color: black;" onclick="setSize(5)"></div></button>
-        <button class="marker-size"><div style="height: 6px; width: 6px; border-radius: 50%; background-color: black;"  onclick="setSize(14)"></div></button>
-        <button class="marker-size"><div style="height: 10px; width: 10px; border-radius: 50%; background-color: black;"  onclick="setSize(20)"></div></button>
-        <button class="marker-size"><div style="height: 15px; width: 15px; border-radius: 50%; background-color: black;"  onclick="setSize(25)"></div></button>
+        <button class="marker-size"  onclick="setSize('5')"><div style="height: 3px; width: 3px; border-radius: 50%; background-color: black;"></div></button>
+        <button class="marker-size" onclick="setSize('14')"><div style="height: 6px; width: 6px; border-radius: 50%; background-color: black;"  ></div></button>
+        <button class="marker-size"  onclick="setSize('20')"><div style="height: 10px; width: 10px; border-radius: 50%; background-color: black;" ></div></button>
+        <button class="marker-size"  onclick="setSize('25')"><div style="height: 15px; width: 15px; border-radius: 50%; background-color: black;" ></div></button>
     </div>
 
     <div class="buttons" style="visibility: hidden;">
@@ -202,7 +202,7 @@
         <button class="option" style="background-color: yellow;" onclick="setColour('yellow')"></button>
         <button class="option" style="background-color: blue;" onclick="setColour('blue')"></button>
         <button class="option" style="background-color: brown;" onclick="setColour('brown')"></button>
-        <button class="option" onclick="erasera()"><img src="https://img.icons8.com/android/15/000000/eraser.png"/></button>
+        <button class="option" onclick="setColour('white')"><img src="https://img.icons8.com/android/15/000000/eraser.png"/></button>
         <button class="option" onclick="cl()"><img src="clear.png"/></button>
     </div>
 </div>

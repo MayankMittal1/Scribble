@@ -107,9 +107,8 @@ io.on('connection', (socket) => {
     drawing=[]
     users=[]
     i=0
-
-    socket.emit('reset','true')
     socket.broadcast.emit('reset',{'message':'true'})
+    socket.emit('reset','true')
   })
 
   socket.on('user-exit',(data)=>{

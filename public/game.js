@@ -14,12 +14,14 @@ var timerinterval = undefined;
 //setColour
 const setColour = (colour) => {
   color = colour;
+  document.documentElement.scrollTop=0
 };
 
 
 //setSize
 const setSize = (s) => {
   size = s;
+  document.documentElement.scrollTop=0
 };
 
 const socket = io();
@@ -103,7 +105,7 @@ socket.on("r-users", function (data) {
   const startBut = document.querySelectorAll(".abc");
   if (startBut) {
     startBut.forEach((element) => {
-      element.remove;
+      element.remove();
     });
   }
   usersr.forEach((element) => {
@@ -171,20 +173,6 @@ socket.on("clear", function (msg) {
   draw();
 });
 
-//eraser
-const erasera = () => {
-  if (eraser) {
-    document.querySelector(".eraser").style.background = "white";
-    color = "black";
-    eraser = false;
-    return;
-  } else {
-    document.querySelector(".eraser").style.background = "green";
-    color = "white";
-    eraser = true;
-    return;
-  }
-};
 //timer
 const timep = document.getElementById("timer");
 const timer = () => {
@@ -200,6 +188,7 @@ const timer = () => {
 const Guesstimer = () => {
   if (timep.innerHTML > 0) {
     timep.innerHTML = timep.innerHTML - 1;
+    console.log('acn')
   } else {
     clearInterval(gtimer);
   }
@@ -209,6 +198,7 @@ const Guesstimer = () => {
 function startDrawingTurn(user, word) {
   timep.innerHTML = 60;
   cl();
+  document.querySelector(".input-box").style.display = "none";
   alert("You have to draw " + word);
   socket.emit("draw-alert", { message: user.name + " is drawing" });
   timerinterval = setInterval(timer, 1000);
@@ -232,7 +222,7 @@ function endDrawingTurn() {
 function startGuessTurn(user) {
   timep.innerHTML = 60;
   endDrawingTurn();
-  document.getElementById("input-box").style.display = "block";
+  document.querySelector(".input-box").style.display = "block";
   guessed = false;
   gtimer = setInterval(Guesstimer, 1000);
 }
