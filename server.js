@@ -9,7 +9,7 @@ var drawing=[]
 var users=[]
 var i=0
 var rounds=2
-var objects=['cat','ball','bat','bowl','bottle','car','fan','wave']
+var objects=['cat','ball','bat','bowl','bottle','car','fan','wave','nose','hand','arm','pen','cycle','mouse','paper','screen','door','table']
 function user(name,id,score){
   this.name=name;
   this.admin=false;
