@@ -4,6 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const port = process.env.PORT || 3000;
 var drawing=[]
 var users=[]
 var i=0
@@ -132,6 +133,6 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log('listening on *:3000');
 });
